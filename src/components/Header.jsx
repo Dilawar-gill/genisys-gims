@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS, WHATSAPP_URL } from '../data/siteData';
 import { useScrolled } from '../hooks/useScrolled';
-import genisysLogo from '../assets/images/genisys-logo.jpg';
+import genisysLogo from '../assets/images/genisys-logo.png';
 import styles from './Header.module.css';
 
 export default function Header() {
