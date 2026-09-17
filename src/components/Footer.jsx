@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, Phone } from 'lucide-react';
 import { FacebookIcon, InstagramIcon, LinkedinIcon, WhatsAppIcon } from './SocialIcons';
 import { COMPANY, WHATSAPP_URL } from '../data/siteData';
-import genisysLogo from '../assets/images/genisys-logo.jpg';
+import genisysLogo from '../assets/images/genisys-logo.png';
 import styles from './Footer.module.css';
 
 export default function Footer() {
