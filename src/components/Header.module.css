@@ -1,0 +1,170 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--header-height);
+  transition: background var(--transition-base), box-shadow var(--transition-base), backdrop-filter var(--transition-base);
+  background: transparent;
+}
+
+.header.scrolled {
+  background: rgba(var(--rgb-dark-navy), 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 4px 24px rgba(0,0,0,0.3);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: var(--space-8);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+/* Light plate that carries the logo on the dark header */
+.logoPlate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--logo-plate-bg);
+  border-radius: var(--logo-plate-radius);
+  padding: var(--logo-plate-padding);
+  box-shadow: var(--logo-plate-shadow);
+  line-height: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Height is driven by --logo-height; width is always derived from the
+   intrinsic 2398x1792 ratio, so the logo can never stretch or squash.
+   object-fit is a defensive guard should a width ever be constrained. */
+.logoImg {
+  display: block;
+  height: var(--logo-height);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-left: auto;
+}
+
+.navLink {
+  padding: 0.4rem 0.85rem;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background var(--transition-fast);
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: var(--color-white);
+  background: rgba(255,255,255,0.08);
+}
+
+.navLink.active {
+  color: var(--color-white);
+  background: rgba(var(--rgb-primary), 0.22);
+}
+
+.cta {
+  flex-shrink: 0;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: 4px;
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-white);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+
+.barOpen1 { transform: translateY(7px) rotate(45deg); }
+.barOpen2 { opacity: 0; transform: scaleX(0); }
+.barOpen3 { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile menu */
+.mobileMenu {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(var(--rgb-dark-navy), 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6) var(--container-padding);
+  gap: var(--space-1);
+}
+
+.mobileNavLink {
+  display: block;
+  padding: var(--space-4) var(--space-4);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast), background var(--transition-fast);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.mobileNavLink:hover,
+.mobileNavLink.mobileActive {
+  color: var(--color-white);
+  background: rgba(var(--rgb-primary), 0.16);
+}
+
+.mobileCta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+@media (max-width: 1024px) {
+  .nav { display: none; }
+  .cta { display: none; }
+  .hamburger { display: flex; }
+}

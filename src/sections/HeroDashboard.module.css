@@ -1,0 +1,211 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: 420px;
+}
+
+.mainCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  background: rgba(var(--rgb-navy-mid), 0.85);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(var(--rgb-primary), 0.18);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.cardDots {
+  display: flex;
+  gap: 4px;
+}
+
+.cardDots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+}
+
+.cardDots span:first-child { background: #FF5F57; }
+.cardDots span:nth-child(2) { background: #FFBD2E; }
+.cardDots span:last-child { background: #28CA41; }
+
+.cardTitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.04em;
+  flex: 1;
+  text-align: center;
+}
+
+/* "Live" status — secondary (green) brand colour */
+.cardBadge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-secondary-light);
+  background: rgba(var(--rgb-secondary), 0.15);
+  padding: 2px 7px;
+  border-radius: 20px;
+  border: 1px solid rgba(var(--rgb-secondary), 0.32);
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.stat {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 10px 8px;
+  text-align: center;
+}
+
+.statValue {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.statLabel {
+  display: block;
+  font-size: 9px;
+  color: rgba(255,255,255,0.45);
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.statTrend {
+  display: block;
+  font-size: 9px;
+  color: var(--color-secondary-light);
+  font-weight: 600;
+}
+
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 60px;
+  margin-bottom: 12px;
+  padding: 0 2px;
+}
+
+.bar {
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+  transform-origin: bottom;
+  min-height: 4px;
+}
+
+.markets {
+  display: flex;
+  gap: 6px;
+}
+
+.marketTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+/* Floating cards */
+.floatCard {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(var(--rgb-navy-mid), 0.92);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 10px 14px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  min-width: 190px;
+  white-space: nowrap;
+}
+
+.floatIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.floatTitle {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.2;
+}
+
+.floatSub {
+  font-size: 10px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 1px;
+}
+
+.floatDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-left: auto;
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.cardLead { top: 4%; left: -8%; }
+.cardAppt { top: 8%; right: -6%; }
+.cardMsg { bottom: 12%; left: -10%; }
+.cardPerf { bottom: 6%; right: -4%; }
+
+@media (max-width: 1024px) {
+  .wrapper { max-width: 420px; height: 360px; }
+  .mainCard { width: 280px; }
+  .cardLead { left: 0; }
+  .cardAppt { right: 0; }
+  .cardMsg { left: 0; }
+  .cardPerf { right: 0; }
+}
+
+@media (max-width: 640px) {
+  .wrapper { max-width: 340px; height: 300px; }
+  .mainCard { width: 240px; padding: 14px; }
+  .floatCard { display: none; }
+  .floatCard:first-of-type { display: flex; }
+}

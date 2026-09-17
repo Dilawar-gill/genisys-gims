@@ -1,0 +1,10 @@
+# Hostinger Static App - SPA Routing Fallback
+# This file must be placed in the dist/ folder root after build,
+# OR Hostinger's Static App handles SPA routing automatically.
+# If you need manual Apache fallback, copy this to dist/ after build.
+
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /index.html [QSA,L]
