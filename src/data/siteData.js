@@ -12,6 +12,7 @@ export const COMPANY = {
     country: 'Pakistan',
   },
   phone: '+92 315 0255687',
+  email: 'info.itgims@gmail.com',
   whatsapp: '+923150255687',
   whatsappMessage: 'Hello Genisys International, I would like to discuss marketing services for my business.',
   social: {

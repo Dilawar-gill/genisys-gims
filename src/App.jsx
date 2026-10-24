@@ -9,6 +9,7 @@ import WorkPage from './pages/WorkPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
+import DataDeletionPage from './pages/DataDeletionPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -30,6 +31,7 @@ function AppRoutes() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
+          <Route path="/data-deletion" element={<DataDeletionPage />} />
         </Routes>
       </Layout>
     </>

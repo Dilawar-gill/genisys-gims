@@ -103,6 +103,7 @@ export default function Footer() {
           <div className={styles.bottomLinks}>
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms & Conditions</Link>
+            <Link to="/data-deletion">Data Deletion</Link>
           </div>
         </div>
       </div>

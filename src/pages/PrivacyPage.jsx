@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useSEO } from '../hooks/useSEO';
 import { COMPANY } from '../data/siteData';
 import styles from './LegalPage.module.css';
@@ -24,7 +25,10 @@ export default function PrivacyPage() {
         <h2>4. Data Security</h2>
         <p>We take reasonable measures to protect your information. However, no method of transmission over the internet is completely secure.</p>
 
-        <h2>5. Contact</h2>
+        <h2>5. Facebook, Instagram and WhatsApp</h2>
+        <p>When you message a business we work with on Facebook, Messenger, Instagram or WhatsApp, we may receive your name, profile ID, messages and any booking details you share. We use this only to reply to you and arrange the service you asked for, and we do not sell it. You can ask us to delete it at any time by following our <Link to="/data-deletion">data deletion instructions</Link>.</p>
+
+        <h2>6. Contact</h2>
         <p>If you have questions about this Privacy Policy, please contact us at {COMPANY.address.street}, {COMPANY.address.postal}, {COMPANY.address.country} or by phone at {COMPANY.phone}.</p>
       </div>
     </div>
