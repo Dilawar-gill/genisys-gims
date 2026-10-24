@@ -37,6 +37,16 @@ jobs:
       - name: Add SPA fallback
         run: cp dist/index.html dist/404.html
 
+      # GitHub Pages only knows dist/index.html, so every other route was
+      # served through 404.html with an HTTP 404 status. Browsers did not
+      # mind, but Meta's URL checker rejected /privacy and /data-deletion.
+      # A real <route>.html per route makes Pages answer 200.
+      - name: Give each route a real page
+        run: |
+          for r in about services industries work contact privacy terms data-deletion; do
+            cp dist/index.html "dist/$r.html"
+          done
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
